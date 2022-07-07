@@ -106,16 +106,6 @@ export default function Home() {
                         </button>
                       </div>
                     </div>
-<<<<<<< HEAD
-=======
-                    <div className="field container pl-3">
-                      <div className="control">
-                        <button type='submit' className={"button"} onClick={showModalHandler}>
-                          Create New Account
-                        </button>
-                      </div>
-                    </div>
->>>>>>> b96ead58126ee6cb0298a8f55193dbd205268d34
                   </form>
                   
                   <div className="field container pl-3">
