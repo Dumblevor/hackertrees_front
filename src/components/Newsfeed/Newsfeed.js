@@ -10,7 +10,7 @@ import baseUrl from "../../config"
 
 export default function Newsfeed() {
   const [allUserPosts, setAllUserPosts] = useState([])
-  const [selectedTag, setSelectedTag] = React.useState([])
+  const [selectedTag, setSelectedTag] = React.useState(false)
 
   const [search, setSearch] = React.useState("")
   const [formData, setFormData] = useState({
@@ -22,12 +22,20 @@ export default function Newsfeed() {
   // handle posts filter
   function postsFilter() {
     return allUserPosts.filter((post) => {
-      return (post.tags.toLowerCase().includes(selectedTag.toLowerCase()))
-        && post.postContent.toLowerCase().includes(search.toLowerCase()
+      // console.log('post tag', post.tags)
+      // console.log('tag', selectedTag[0].value)
+      if (selectedTag !== false) {
+        return (
+          ([...post.tags].includes(selectedTag[0].value))
+          && (post.postContent.toLowerCase().includes(search.toLowerCase())
+          )
         )
-    })
+      } else {
+        return post.postContent.toLowerCase().includes(search.toLowerCase())
+      }
+    }
+    )
   }
-
 
   //handles input changes for a new post
   function handleChange(e) {
@@ -74,6 +82,7 @@ export default function Newsfeed() {
       getPostData()
     }, 1000);
   }, [])
+
 
   return (
     <section className="section">
@@ -131,7 +140,7 @@ export default function Newsfeed() {
                 value={search}
                 placeholder={"Search Newsfeed"}
                 onChange={(e) => setSearch(e.target.value)} />
-              <button className={`button is-rounded  ${search.length > 0 ? "" : 'is-hidden'}`} onClick>
+              <button className={`button is-rounded  ${search.length > 0 ? "" : 'is-hidden'}`} >
                 Search futher..
               </button>
             </div>
@@ -144,14 +153,13 @@ export default function Newsfeed() {
                 options={tags}
                 className="basic-multi-select my-5 level-right"
                 classNamePrefix="select"
-                onChange={(tags) => {
-                  setSelectedTag([...tags])
-                }}
+                onChange={(tag) => setSelectedTag(tag) }
                 value={selectedTag}
                 placeholder={"Filter by tag"}
               />
 
             </div>
+
             {allUserPosts ? postsFilter().map((post, index) => {
               return <div key={index} className="">
                 <PostElement
