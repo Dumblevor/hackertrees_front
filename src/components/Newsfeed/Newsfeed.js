@@ -22,12 +22,12 @@ export default function Newsfeed() {
   // handle posts filter
   function postsFilter() {
     return allUserPosts.filter((post) => {
-      return post.postContent.toLowerCase().includes(search.toLowerCase()
-      )
+      return (post.tags.toLowerCase().includes(selectedTag.toLowerCase()))
+        && post.postContent.toLowerCase().includes(search.toLowerCase()
+        )
     })
   }
 
-  // post.tags.includes(selectedTag) ||
 
   //handles input changes for a new post
   function handleChange(e) {
@@ -70,6 +70,9 @@ export default function Newsfeed() {
 
   useEffect(() => {
     getPostData()
+    setInterval(() => {
+      getPostData()
+    }, 1000);
   }, [])
 
   return (
@@ -149,7 +152,7 @@ export default function Newsfeed() {
               />
 
             </div>
-            {postsFilter().map((post, index) => {
+            {allUserPosts ? postsFilter().map((post, index) => {
               return <div key={index} className="">
                 <PostElement
                   {...post}
@@ -158,7 +161,7 @@ export default function Newsfeed() {
                   setAllUserPosts={setAllUserPosts} />
               </div>
             }
-            )}
+            ) : <p> Loading posts</p>}
           </div>
 
         </div>

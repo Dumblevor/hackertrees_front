@@ -12,9 +12,18 @@ export default function ShowSinglePost() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`${baseUrl}/posts/${postID}`)
-      .then(respo => respo.json())
-      .then(data => setPostData(data))
+    async function fetchOnePost() {
+      fetch(`${baseUrl}/posts/${postID}`)
+        .then(respo => respo.json())
+        .then(data => setPostData(data))
+    }
+
+    fetchOnePost()
+
+    setInterval(() => {
+      fetchOnePost()
+    }, 1000)
+
   }, [postID])
 
 
@@ -50,7 +59,7 @@ export default function ShowSinglePost() {
   return (
     <section className="section">
       <div className="container">
-        
+
         {postData ? (
 
           < div className="card">
