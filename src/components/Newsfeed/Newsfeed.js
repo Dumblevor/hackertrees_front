@@ -22,17 +22,8 @@ export default function Newsfeed() {
   // handle posts filter
   function postsFilter() {
     return allUserPosts.filter((post) => {
-      // console.log('post tag', post.tags)
-      // console.log('tag', selectedTag[0].value)
-      if (selectedTag !== false) {
-        return (
-          ([...post.tags].includes(selectedTag[0].value))
-          && (post.postContent.toLowerCase().includes(search.toLowerCase())
-          )
-        )
-      } else {
-        return post.postContent.toLowerCase().includes(search.toLowerCase())
-      }
+      return (post.postContent.toLowerCase().includes(search.toLowerCase())
+        && (selectedTag && [...post.tags].includes(selectedTag[0].value)))
     }
     )
   }
@@ -153,7 +144,7 @@ export default function Newsfeed() {
                 options={tags}
                 className="basic-multi-select my-5 level-right"
                 classNamePrefix="select"
-                onChange={(tag) => setSelectedTag(tag) }
+                onChange={(tag) => setSelectedTag(tag)}
                 value={selectedTag}
                 placeholder={"Filter by tag"}
               />
