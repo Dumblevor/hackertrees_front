@@ -13,7 +13,7 @@ const LoginModal = (props) => {
     username: "",
     password: "",
     passwordConfirmation: "",
-    "email": "",
+    email: "",
   });
 
   const [errors, setErrors] = useState({
@@ -51,10 +51,7 @@ const LoginModal = (props) => {
     }
   }
 
-  console.log(modalForm);
-
   function handleModalChange(e) {
-    console.log(e.target);
     const { name, value } = e.target;
     setModalForm({
       ...modalForm,
