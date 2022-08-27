@@ -10,7 +10,7 @@ import baseUrl from "../../config"
 
 export default function Newsfeed() {
   const [allUserPosts, setAllUserPosts] = useState([])
-  const [selectedTag, setSelectedTag] = React.useState(false)
+  // const [selectedTag, setSelectedTag] = React.useState(false)
 
   const [search, setSearch] = React.useState("")
   const [formData, setFormData] = useState({
@@ -22,9 +22,9 @@ export default function Newsfeed() {
   // handle posts filter
   function postsFilter() {
     return allUserPosts.filter((post) => {
-      return (post.postContent.toLowerCase().includes(search.toLowerCase())
-        && (selectedTag && [...post.tags].includes(selectedTag[0].value)))
+      return post.postContent.toLowerCase().includes(search.toLowerCase())
     }
+      // && (selectedTag && [...post.tags].includes(selectedTag[0].value))) 
     )
   }
 
@@ -65,13 +65,14 @@ export default function Newsfeed() {
         headers: { "authorization": `Bearer ${localStorage.getItem("token")}` },
       })
     setAllUserPosts(data)
+    console.log(data)
   }
 
   useEffect(() => {
     getPostData()
     setInterval(() => {
       getPostData()
-    }, 1000);
+    }, 10000);
   }, [])
 
 
@@ -135,7 +136,7 @@ export default function Newsfeed() {
                 Search futher..
               </button>
             </div>
-
+            {/* 
             <div>
               <Select
                 defaultValue={[]}
@@ -149,7 +150,7 @@ export default function Newsfeed() {
                 placeholder={"Filter by tag"}
               />
 
-            </div>
+            </div> */}
 
             {allUserPosts ? postsFilter().map((post, index) => {
               return <div key={index} className="">
