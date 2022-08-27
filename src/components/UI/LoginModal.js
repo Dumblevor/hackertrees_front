@@ -98,7 +98,7 @@ const LoginModal = (props) => {
                 </a>
               </small>
             </div>
-            {errors.password && <small className="has-text-danger">{errors.password}</small> }
+            {errors.password && <small className="has-text-danger">{"An error occurred. Please try a different password."}</small> }
           </div>
 
           <div className="field column">
