@@ -45,7 +45,7 @@ function App() {
             <div className="content has-text-centered ">
               <p>
                 <strong>HackerTrees.com</strong> proudly developed by
-                <Link to="https://github.com/dancfc84" className=""> Dimitar Vidolov</Link>,
+                <Link to="https://github.com/Dumblevor" className=""> Dimitar Vidolov</Link>,
                 <Link to="https://github.com/dancfc84" className=""> Daniel Whittock</Link> and
                 <Link to="https://github.com/Qshan888" className=""> Cody Shan </Link>
                 as part of Software Engineering Immersive 23 at
