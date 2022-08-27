@@ -72,7 +72,7 @@ export default function Newsfeed() {
     getPostData()
     setInterval(() => {
       getPostData()
-    }, 10000);
+    }, 2000);
   }, [])
 
 
