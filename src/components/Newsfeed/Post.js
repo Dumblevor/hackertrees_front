@@ -135,7 +135,8 @@ export default function PostElement(singlePostDataProp) {
 
 
         {/* {edit and delete buttons if creator} */}
-        {isCreator(singlePostDataProp.user._id) && <div className="level-right" >
+        {isCreator(singlePostDataProp.user._id)
+        && <div className="level-right">
           <Link to={`/postedit/${singlePostDataProp._id}`}>
             <button className="button is-rounded is-small level-right is-info is-light mx-2 my-2" >
               Edit </button>

@@ -8,7 +8,7 @@ export function getLoggedInUserId() {
   const decodedString = window.atob(middlePart)
   const decodedObj = JSON.parse(decodedString)
   console.log(decodedObj);
-  return decodedObj.sub
+  return decodedObj.userId
 }
 
 
@@ -16,4 +16,3 @@ export function isCreator(userIdToCompare) {
   if (!userIdToCompare) return false
   return userIdToCompare === getLoggedInUserId()
 }
-
