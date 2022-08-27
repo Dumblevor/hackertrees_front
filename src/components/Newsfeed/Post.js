@@ -136,14 +136,14 @@ export default function PostElement(singlePostDataProp) {
 
         {/* {edit and delete buttons if creator} */}
         {isCreator(singlePostDataProp.user._id)
-        && <div className="level-right">
-          <Link to={`/postedit/${singlePostDataProp._id}`}>
-            <button className="button is-rounded is-small level-right is-info is-light mx-2 my-2" >
-              Edit </button>
-          </Link>
-          <button className="button is-rounded is-small level-right is-warning is-light mx-2 my-2" onClick={deletePostHandle} >
-            Delete </button>
-        </div>
+          && <div className="level-right">
+            <Link to={`/postedit/${singlePostDataProp._id}`}>
+              <button className="button is-rounded is-small level-right is-info is-light mx-2 my-2" >
+                Edit </button>
+            </Link>
+            <button className="button is-rounded is-small level-right is-warning is-light mx-2 my-2" onClick={deletePostHandle} >
+              Delete </button>
+          </div>
         }
         {singlePostDataProp.upvotedBy.length > 0
           &&
@@ -176,19 +176,19 @@ export default function PostElement(singlePostDataProp) {
                   placeholder="Make a comment.."
                   onChange={(event) => setCommentContent(event.target.value)}
                 />
+                <div className="field">
+                  <p className="control">
+                    <button
+                      className="button is-info button is-rounded is-light mx-3"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </p>
+                </div>
+              </p>
+            </div>
 
-              </p>
-            </div>
-            <div className="field">
-              <p className="control">
-                <button
-                  className="button is-info button is-rounded is-light mx-3"
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </p>
-            </div>
           </form>
         </article>}
 
