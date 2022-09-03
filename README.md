@@ -1,29 +1,89 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Adding A Frontend
+# hackertrees
 
-## Guidelines
+## Overview
 
-### Part 1, Getting it all set up
+This is the third project of the software engineering immersive course at General Assembly London. The assignment was to create a full-stack website with React and Node.js. The project was to be completed **in a group** within **6 days** over 2 weeks. 
 
-This React project is the starter code for a frontend for the API you've been building. It depends on your API to be running.
-
-It works via creating a proxy server to connect with your API. It expects all backend endpoints to be prefixed with the `/api` prefix. That's how React-Dev-Server can tell the difference between React routes on the frontend, and your API endpoints.
-
-If your API doesn't have an `/api` prefix yet, you can add this by amending the following line in your `server.js` file:
-
-`app.use('/api', router)`
-
-Note that you'll need to update your requests in insomnia, now that you've added this prefix! You will also need to update your tests, to expect this prefix.
-
-Try running both projects at the same time and see if you can get your frontend talking to your backend!
-
-`npm start` or `npm run start` to run your frontend.
+Preview: ![preview-screen](./readme-assets/preview-screen.png)
+(navbar is shown for preview purposes, it us unavailable unless signed-in)
 
 
-### Part 2, Adding more components
+## Technologies used 
 
-Once you've got your Frontend talking to your Backend, time to add some features to your frontend to make it a nicer experience!
+- React
+- Node.js
+- Mongoose
+- Express
+- MongoDB
+- HTML
+- CSS
+- JavaScript
+- Git and GitHub
+- Bulma
 
-1. Add a `Navbar` so that you can navigate, and hook up both the `/` and `/pokemon` (equivalent) routes so that you can move between a home page and an index page. Your index page should show a list of nice cards.
-2. Create a `ShowPokemon` (equivalent) component, so that when you click on a card it takes you to the ShowPokemon page that just shows a single pokemon. 
+## Approach
+
+The idea from the beginning was to create a specialised professional network site for IT professionals. 
+Me and my team wrote up user stories and wireframes using Miro:
+![miro-screen](./readme-assets/miro-screen.png)
+
+I took the lead on the social aspect of the site, including filtering, show/hide comments, tags, CRUD posts and comments, both on the fronend and backend. I also contributed to the home page, the middleware on the backend, the footer, about us page, login, register and logout. 
 
 
+## Timeline
+- Day 1 - Brainstorming & wireframes, user stories, pseudo models
+- Day 2 - Boiler plate setup, Git setup, Jira, start of Sprint 1
+- Day 4 - End of sprint 1, start of sprint 2
+- Day 6 - End of sprint 2
+- Day 7 - Deployment
+
+
+## Jira setup 
+
+My tickets are marked orange.
+
+### Sprint 1:
+#### MVP Roadmap
+![initial-bakcklog](./readme-assets/MVP-roadmap.png)
+
+#### Initial Backlog
+![initial-bakcklog](./readme-assets/initial-backlog.png)
+
+#### Backlog
+![sprint-1-backlog](./readme-assets/Sprint-1-board.png)
+
+#### Stretchgoals
+![sprint-1-stretchgoals](./readme-assets/Stretchgoals-1.png)
+
+#### MVP done
+![mvp-done](./readme-assets/MVP-done.png)
+
+--------
+
+
+### Sprint 2
+#### Board
+![sprint-2-board](./readme-assets/Sprint-2-board.png)
+
+#### Backlog
+![sprint-2-bakcklog](./readme-assets/Spint-2-backlog.png)
+
+#### Roadmap
+![sprint-2-roadmap](./readme-assets/Spint-2-roadmap.png)
+
+In total I completed 12 of 28 issues ~ 43% + initial teachnical, Git and Jira setups.
+
+## Bugs, Wins & Learnings
+Many features that were stretch goals were not finished, including search for the whole site, filtering by tags, upvotes for posts.
+It was a great project and there is a throve of features that can be added to make it a proper product. 
+
+Working in team is fun and can get a lot done when the group is in sync. 
+I personally learned quite a bit about react, router, state and bulma on this project. 
+
+Final version of the newsfeed:
+![newsfeed](./readme-assets/final-social.png)
+
+
+## Credits
+- Logo: Dimitar Vidolov (via canva.com).
+--------
