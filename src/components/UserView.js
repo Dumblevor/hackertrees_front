@@ -26,7 +26,6 @@ export default function UserView() {
       <div className="columns is-multiline is-mobile">
         {users.map((user, index) => {
           return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-            {/* <Link to={`/api/profile/${users._id}`}> */}
             <div className={`card ${styles.profiles}`}>
               <div className={`card-content ${styles.profiles}`}>
                 <div className="media">

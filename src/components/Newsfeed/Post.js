@@ -42,7 +42,7 @@ export default function PostElement(singlePostDataProp) {
     e.preventDefault()
     try {
       const { data } = await axios.post(
-        `/api/posts/${singlePostDataProp._id}/comment`,
+        `${baseUrl}/posts/${singlePostDataProp._id}/comment`,
         { content: commentContent },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -62,7 +62,7 @@ export default function PostElement(singlePostDataProp) {
 
     try {
       const deleteThisComment = await axios.delete(
-        `/api/posts/${singlePostDataProp._id}/${commentID}`,
+        `${baseUrl}/posts/${singlePostDataProp._id}/${commentID}`,
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       )
       console.log(deleteThisComment);
@@ -78,7 +78,7 @@ export default function PostElement(singlePostDataProp) {
   async function handleUpvote() {
 
     try {
-      const { data } = await fetch(`/api/posts/${singlePostDataProp._id}/vote`,
+      const { data } = await fetch(`${baseUrl}/posts/${singlePostDataProp._id}/vote`,
         {
           method: 'POST',
           headers: {
