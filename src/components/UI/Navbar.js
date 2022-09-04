@@ -3,14 +3,13 @@ import { NavLink } from "react-router-dom"
 import React from "react"
 import { useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css"
-// import { getLoggedInUserId } from '../../lib/auth.js'
+import { isCreator, getLoggedInUserId } from '../../lib/auth.js'
 
 
 export default function Navbar() {
   const location = useLocation()
   const [isLoggedIn, setIsLoggedIn] = React.useState(Boolean(localStorage.getItem("loggedIn")))
 
-  // ! Whenever the URL changes, we want to reset our loggedIn state, so that when the user logs in, the page redirects.
   React.useEffect(() => {
     setIsLoggedIn(Boolean(localStorage.getItem("loggedIn")))
   }, [location])
