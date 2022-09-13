@@ -99,11 +99,7 @@ A good idea was to keep updating the front end with a time interval:
   ```
 
   That way the user will see up-to-date data. 
-<<<<<<< HEAD
-  Deleting comments and posts in real time using state also drastically improves the UX. 
-=======
   Deleting comments and posts in  real-time using state also improves drastically the UX. 
->>>>>>> 90ddc1d7785e026e13dc59d67f97547b01ecf8d4
   I also added a show/hide button for the comments so the feed doesn't clutter. 
 
 The final version of the newsfeed:
