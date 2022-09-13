@@ -76,7 +76,6 @@ export default function PostElement(singlePostDataProp) {
 
   //submits query to backed for like/upvote
   async function handleUpvote() {
-
     try {
       const { data } = await fetch(`${baseUrl}/posts/${singlePostDataProp._id}/vote`,
         {
@@ -84,10 +83,8 @@ export default function PostElement(singlePostDataProp) {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem('token')}`,
           },
-        }
-      )
+        })
       singlePostDataProp.getPostData()
-
       console.log(data);
     } catch (err) {
       console.log(err.response.data);
