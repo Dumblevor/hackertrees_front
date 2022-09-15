@@ -100,7 +100,6 @@ export default function Profile() {
         </div>
         <div className="column is-half-tablet is-half-mobile mt-4">
           <form onSubmit={handleSubmit}>
-            {/* // ! Me Being Extremely Fancy 🤪: */}
             {['profilePicture', 'bioUser', 'firstName', 'lastName', 'position', 'companyRepresented', 'yearsExp' ].map(field => {
               return <div key={field} className="field">
                 <label className="label">
